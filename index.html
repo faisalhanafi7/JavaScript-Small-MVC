@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="Java Script Model,View,Controller" author="Muhmaad Faiz Al Hanafi">?
+	<title>Small MVC</title>
+	<script type="text/javascript" src="mvc.js"></script>
+</head>
+<body>
+	<!-- tampilan awal di -->
+  <h3>Navigasi</h3>
+  <div>
+  	<a href="index.html#/home">Home</a>&nbsp;
+  	<a href="index.html#/about">About</a>&nbsp;
+  	<a href="index.html#/contact">Contact</a>&nbsp;
+  </div>
+
+  <!-- masuk script js -->
+  <br>
+  <br>
+   <h3>View</h3>
+   <div view></div>
+
+   <script>
+   	jsMvc.AddRoute(HomeController, 'home', 'views/home.html');
+   	jsMvc.AddRoute(ContactController, 'contact', 'views/contact.html');
+   	jsMvc.AddRoute(AboutController, 'about', 'views/about.html');
+   	jsMvc.Initialize();
+
+   	function HomeController(model) {
+   		model.Message = 'Helloo han';
+   	}
+   	function ContactController(model) {
+   		model.FirstName = "M.Faiz Al";
+   		model.LastName = "Hanafi";
+   		model.Phone = "085706477263";
+   	}
+   	function AboutController(model) {
+   		
+   	}
+   </script>
+</body>
+</html>
